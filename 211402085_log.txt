@@ -1,2 +1,52 @@
 MariaDB [(none)]> USE Uas_sbd;
 Database changed
+MariaDB [Uas_sbd]> SHOW TABLES;
+Empty set (0.001 sec)
+
+MariaDB [Uas_sbd]> CREATE TABLE 211402085(
+    -> Task_id varchar(50) Primary Key,
+    -> Nama_Task varchar(100),
+    -> Status varchar(2),
+    -> Kategori_Indikator(50) index,
+    -> Kategori varchar (2),
+    -> Indikator varchar (2),
+    -> Creator_Id varchar (50) idex,
+    -> Creator_Name varchar(50),
+    -> Prioritas varchar (5)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '211402085(
+Task_id varchar(50) Primary Key,
+Nama_Task varchar(100),
+Status va...' at line 1
+MariaDB [Uas_sbd]> Task_id varchar(50) Primary Key,
+    ->     -> Nama_Task varchar(100),
+    ->     -> Status varchar(2),
+    ->     -> Kategori_Indikator(50) unique,
+    ->     -> Kategori varchar(2),
+    ->     -> Indikator varchar(2),
+    ->     -> Creator_Id varchar(50) unique,
+    ->     -> Creator_Name varchar(50),
+    ->     -> Prioritas varchar(5)
+    ->     -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Task_id varchar(50) Primary Key,
+    -> Nama_Task varchar(100),
+    -> Status...' at line 1
+MariaDB [Uas_sbd]> SHOW TABLES;
+Empty set (0.001 sec)
+
+MariaDB [Uas_sbd]> CREATE TABLE 211402085(
+    -> Task_id varchar(50) Primary Key,
+    ->     -> Nama_Task varchar(100),
+    ->     -> Status varchar(2),
+    ->     -> Kategori_Indikator(50) unique,
+    ->     -> Kategori varchar(2),
+    ->     -> Indikator varchar(2),
+    ->     -> Creator_Id varchar(50) unique,
+    ->     -> Creator_Name varchar(50),
+    ->     -> Prioritas varchar(5)
+    ->     -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '211402085(
+Task_id varchar(50) Primary Key,
+    -> Nama_Task varchar(100),
+  ...' at line 1
+MariaDB [Uas_sbd]> exit
